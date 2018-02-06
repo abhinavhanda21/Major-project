@@ -1,0 +1,77 @@
+\documentclass[12pt,includeheadfoot,a4paper]{report}
+\usepackage[print,nopanel]{pdfscreen}
+%\begin{print}
+\usepackage{classes/lipsum}% http://ctan.org/pkg/lipsum
+\usepackage{classes/titletoc}
+%\section{type}
+\usepackage{classes/lastpage}
+\usepackage{classes/macro}
+\usepackage{classes/float}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{K}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{xcolor, colortbl}
+\definecolor{Gray}{gray}{0.85}
+\usepackage{verbatim}
+\usepackage[Glenn]{classes/fncychap}
+\usepackage{placeins}
+%\let\Oldsubsection\subsection
+%\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+%\let\Oldsection\section
+%\renewcommand{\section}{\FloatBarrier\Oldsection}
+\lhead{ \bfseries Multi-Threaded Geometric Rendering}
+\rhead{}
+\usepackage[left=2.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
+\pagestyle{fancy}
+%\end{print}
+\margins{2.5cm}{1.5cm}{1.5cm}{1.5cm}
+\linespread{1.25}
+\begin{screen}
+	
+	\renewcommand{\encodingdefault}{T1}
+	\usepackage{setspace}
+	\linespread{1.5}
+	\renewcommand{\rmdefault}{ptm}
+\end{screen}
+\screensize{8cm}{9cm}
+\overlay{overlay8.pdf}
+\usepackage{graphicx}
+
+
+\begin{document}
+	\input{input/mid_titlepage.tex}
+	\begin{screen}
+		\ppttitle
+	\end{screen}
+	\thispagestyle{empty} 
+	\pagetitle	
+	\newpage
+	\pagenumbering{Roman}
+	\cfoot{\thepage}
+	\addcontentsline{toc}{section}{Abstract}
+	\input{input/abstract.tex}
+	\newpage
+	
+	\addcontentsline{toc}{section}{Acknowledgement}
+	\input{input/acknowledgement.tex}
+	
+	\newpage
+	\addcontentsline{toc}{section}{List of Figures}
+	\listoffigures
+	\newpage
+	\tableofcontents
+	\newpage
+	
+	\pagenumbering{arabic}
+	\cfoot{\thepage}
+
+	\input{input/Introduction.tex}
+	\input{input/Requirement_Analysis_and_System_Specification.tex}
+	\input{input/System_Design.tex}
+	\input{input/mid_implementation.tex}
+	\input{input/mid_conclusions.tex}
+	\newpage
+	
+	\input{input/references.tex}
+\end{document}
